@@ -21,3 +21,28 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# macOS 관련 파일
+.DS_Store
+.DS_Store?
+
+# 기존 무시 규칙
+data/~$visitjeju_data.xlsx
+frontend/src/images/start_bg.mp4
+python/api_to_excel.py
+node_modules
+frontend/node_modules
+node_modules/*
+python
+python/*
+*.zip
+src/database/db.js
+.env
+
+# 추가적으로 숨김 파일
+Thumbs.db
+ehthumbs.db
+.DS_Store
+*.swp
+img/
+files/
