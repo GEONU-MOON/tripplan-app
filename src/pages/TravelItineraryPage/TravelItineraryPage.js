@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import "../../styles/common.css";
 import "./TravelItineraryPage.css";
+import SwipeableModal from "../../components/SwipeModal";
 
 const TravelItineraryPage = () => {
   const [popupVisible, setPopupVisible] = useState(false);
   const [itemType, setItemType] = useState("");
   const [items, setItems] = useState([]);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [selectedImages, setSelectedImages] = useState([]);
 
   const [formData, setFormData] = useState({
     transportType: "plane_start",
@@ -77,6 +81,12 @@ const TravelItineraryPage = () => {
 
     setItems([...items, newItem]);
     closePopup();
+  };
+
+  const openImageModal = (images, index) => {
+    setSelectedImages(images);
+    setCurrentImageIndex(index);
+    setModalOpen(true);
   };
 
   return (
@@ -268,11 +278,15 @@ const TravelItineraryPage = () => {
                   <div className="thumb">
                     <div className="qty">
                       {item.imgURLs ? item.imgURLs.length : 0}
-                    </div>{" "}
-                    {/* 안전하게 수량 표시 */}
+                    </div>
                     <div className="box">
                       {(item.imgURLs || []).map((url, i) => (
-                        <img key={i} src={url} alt={`Thumbnail ${i + 1}`} />
+                        <img
+                          key={i}
+                          src={url}
+                          alt={`Thumbnail ${i + 1}`}
+                          onClick={() => openImageModal(item.imgURLs, i)}
+                        />
                       ))}
                     </div>
                   </div>
@@ -298,6 +312,14 @@ const TravelItineraryPage = () => {
           ))
         )}
       </div>
+
+      <SwipeableModal
+        images={selectedImages}
+        isOpen={modalOpen}
+        onClose={() => setModalOpen(false)}
+        currentIndex={currentImageIndex}
+        setCurrentIndex={setCurrentImageIndex}
+      />
     </div>
   );
 };
