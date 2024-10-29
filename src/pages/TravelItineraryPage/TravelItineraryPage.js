@@ -13,8 +13,7 @@ const TravelItineraryPage = () => {
     title: "",
     description: "",
     price: "",
-    qty: "",
-    imgURL: "",
+    imgURLs: "", // 쉼표로 구분된 이미지 URL 문자열
     tags: "",
   });
 
@@ -26,8 +25,7 @@ const TravelItineraryPage = () => {
       title: "",
       description: "",
       price: "",
-      qty: "",
-      imgURL: "",
+      imgURLs: "",
       tags: "",
     });
   };
@@ -59,14 +57,22 @@ const TravelItineraryPage = () => {
   };
 
   const addDefaultItem = () => {
+    const imageUrls = (formData.imgURLs || "")
+      .split(",")
+      .map((url) => url.trim())
+      .filter((url) => url); // 빈 문자열 제거
+
     const newItem = {
       type: "default",
       time: formData.time,
       title: formData.title,
       description: formData.description,
-      qty: formData.qty,
-      imgURL: formData.imgURL,
-      tags: formData.tags.split(",").map((tag) => tag.trim()),
+      qty: imageUrls.length, // 수량을 이미지 URL의 개수로 설정
+      imgURLs: imageUrls, // imgURLs 배열로 저장
+      tags: (formData.tags || "")
+        .split(",")
+        .map((tag) => tag.trim())
+        .filter((tag) => tag),
     };
 
     setItems([...items, newItem]);
@@ -198,23 +204,13 @@ const TravelItineraryPage = () => {
                   />
                 </label>
                 <label>
-                  수량:{" "}
-                  <input
-                    type="number"
-                    name="qty"
-                    value={formData.qty}
-                    onChange={handleChange}
-                    placeholder="수량 입력"
-                  />
-                </label>
-                <label>
                   이미지 URL:{" "}
                   <input
                     type="text"
-                    name="imgURL"
-                    value={formData.imgURL}
+                    name="imgURLs"
+                    value={formData.imgURLs}
                     onChange={handleChange}
-                    placeholder="이미지 URL 입력"
+                    placeholder="이미지 URL 입력 (쉼표로 구분)"
                   />
                 </label>
                 <label>
@@ -240,8 +236,6 @@ const TravelItineraryPage = () => {
           <p className="no-items-message">일정을 등록하세요</p>
         ) : (
           items.map((item, index) => (
-            // 각 항목의 UI를 조건부 렌더링을 통해 개선
-
             <ul key={index} className={`item ${item.type}`}>
               <div className="info">
                 <li className="date">{item.time}</li>
@@ -272,9 +266,14 @@ const TravelItineraryPage = () => {
               ) : (
                 <>
                   <div className="thumb">
-                    <div className="qty">{item.qty}</div>
+                    <div className="qty">
+                      {item.imgURLs ? item.imgURLs.length : 0}
+                    </div>{" "}
+                    {/* 안전하게 수량 표시 */}
                     <div className="box">
-                      <img src={item.imgURL} alt="Thumbnail" />
+                      {(item.imgURLs || []).map((url, i) => (
+                        <img key={i} src={url} alt={`Thumbnail ${i + 1}`} />
+                      ))}
                     </div>
                   </div>
                   <div className="link">
