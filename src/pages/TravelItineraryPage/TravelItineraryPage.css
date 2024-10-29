@@ -370,18 +370,23 @@ img {
   display: block; /* 초기 상태는 보이게 설정 */
 }
 
-/* Action Buttons */
-.action-buttons {
-  position: absolute;
-  top: 15px;
-  right: 80px;
+.wrap .list .move .action-and-price.action-buttons {
   display: flex;
+  align-items: center;
+  position: absolute;
+  top: 40px;
+  right: 50px;
   gap: 8px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 3px;
 }
 
 .edit-btn,
 .delete-btn {
-  background-color: #f3f4f6;
+  background-color: white;
   border: none;
   border-radius: 4px;
   padding: 5px 8px;
@@ -389,12 +394,12 @@ img {
   transition: background-color 0.3s;
 }
 
-.edit-btn:hover {
-  background-color: var(--blue100);
+.edit-btn:hover i {
+  color: var(--blue100); /* 원하는 색상으로 변경 */
 }
 
-.delete-btn:hover {
-  background-color: red;
+.delete-btn:hover i {
+  color: red; /* 삭제 아이콘의 경우 빨간색으로 강조 */
 }
 
 .edit-btn i,

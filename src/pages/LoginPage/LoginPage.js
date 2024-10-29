@@ -7,7 +7,7 @@ const LoginPage = ({ onLogin }) => {
   const navigate = useNavigate();
 
   const handleLogin = () => {
-    navigate("/"); // 로그인 후 HomePage로 이동
+    navigate("/home"); // 로그인 후 HomePage로 이동
   };
 
   return (
