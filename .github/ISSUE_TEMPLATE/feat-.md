@@ -7,7 +7,11 @@ assignees: ''
 
 ---
 
-feat1
-Todos
- todo1
- todo2
+## New Features
+
+1. feat1
+
+### Todos
+
+- [ ] todo1
+- [ ] todo2
