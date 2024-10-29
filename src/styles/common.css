@@ -1,0 +1,101 @@
+:root {
+  --white: #fff;
+  --gray10: #fafafc;
+  --gray20: #f4f6fa;
+  --gray30: #eaedf4;
+  --gray40: #d7dce5;
+  --gray50: #b4c0d3;
+  --gray60: #96a0b5;
+  --gray70: #8491a7;
+  --gray90: #5c667b;
+  --gray100: #475067;
+  --gray110: #373f57;
+  --gray120: #292e41;
+  --blue10: #f7fafe;
+  --blue20: #f3f7ff;
+  --blue30: #e9f3ff;
+  --blue40: #d1e6ff;
+  --blue80: #4876ef;
+  --blue100: #315ae9;
+  --red20: #fff5f7;
+  --red40: #ffd1d1;
+  --red90: #ff5656;
+  --bg01: #fafafc;
+}
+
+body {
+  background-color: var(--gray40);
+  color: var(--gray120);
+  font-family: Pretendard, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+}
+
+/* 공통 스타일 */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body,
+dl,
+dt,
+li,
+ol,
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: var(--gray120);
+  text-decoration: none;
+}
+
+/* Pretendard 폰트 설정 */
+@font-face {
+  font-family: Pretendard;
+  font-weight: 200;
+  src: url(https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraLight.woff)
+    format("woff");
+}
+
+/* 나머지 Pretendard 폰트들 설정 */
+/* ... 같은 방식으로 추가 */
+
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* 스크롤바 스타일 */
+html::-webkit-scrollbar {
+  width: 5px;
+}
+
+html::-webkit-scrollbar-track {
+  background: #eceff3;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #a1acbb;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background: #7e94b4;
+}
+
+/* wrap 클래스 */
+.wrap {
+  background-color: #eff2f7;
+  margin: 0 auto;
+  min-height: 100vh;
+  width: 400px;
+}
+
+@media (max-width: 600px) {
+  .wrap {
+    width: 100%;
+  }
+}
