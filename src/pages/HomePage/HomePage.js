@@ -15,6 +15,7 @@ const HomePage = () => {
     tags: "",
   });
 
+  // 팝업 열기 함수
   const openPopup = (isEdit = false, data = null) => {
     if (isEdit && data) {
       setPopupTitle("여행 수정");
@@ -32,13 +33,16 @@ const HomePage = () => {
     setPopupVisible(true);
   };
 
+  // 팝업 닫기 함수
   const closePopup = () => setPopupVisible(false);
 
+  // 입력 값 변경 핸들러
   const handleChange = (e) => {
     const { name, value } = e.target;
     setTripData({ ...tripData, [name]: value });
   };
 
+  // 페이지 이동
   const goToTravelItineraryPage = () => {
     navigate("/itinerary");
   };
@@ -53,12 +57,12 @@ const HomePage = () => {
         <ul className="homepage-trip-item">
           <div
             className="homepage-info"
+            onClick={goToTravelItineraryPage}
             data-title="뉴욕 여행"
             data-start-date="2024-10-24"
             data-end-date="2024-10-25"
             data-description="뉴욕의 숨은 명소 투어"
             data-tags="태그 1,태그 2"
-            onClick={goToTravelItineraryPage}
           >
             <li className="homepage-date">2024-10-24 ~ 2024-10-25</li>
             <li className="homepage-title">뉴욕 여행</li>
@@ -81,7 +85,13 @@ const HomePage = () => {
               className="homepage-edit-btn"
               onClick={(e) => {
                 e.stopPropagation();
-                openPopup(true, tripData);
+                openPopup(true, {
+                  title: "뉴욕 여행",
+                  startDate: "2024-10-24",
+                  endDate: "2024-10-25",
+                  description: "뉴욕의 숨은 명소 투어",
+                  tags: "태그 1,태그 2",
+                });
               }}
             >
               <i className="fas fa-pencil-alt"></i>
@@ -103,7 +113,7 @@ const HomePage = () => {
       </div>
 
       {popupVisible && (
-        <div className="homepage-popup-overlay">
+        <div className="homepage-popup-overlay" style={{ display: "flex" }}>
           <div className="homepage-popup-content">
             <h2>{popupTitle}</h2>
             <form>
