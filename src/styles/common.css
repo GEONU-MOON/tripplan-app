@@ -23,6 +23,7 @@
   --bg01: #fafafc;
 }
 
+/* Body Styling */
 body {
   background-color: var(--gray40);
   color: var(--gray120);
@@ -32,7 +33,9 @@ body {
   line-height: 21px;
 }
 
-/* 공통 스타일 */
+/* common.css */
+
+/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -54,7 +57,7 @@ a {
   text-decoration: none;
 }
 
-/* Pretendard 폰트 설정 */
+/* Font settings */
 @font-face {
   font-family: Pretendard;
   font-weight: 200;
@@ -62,14 +65,53 @@ a {
     format("woff");
 }
 
-/* 나머지 Pretendard 폰트들 설정 */
-/* ... 같은 방식으로 추가 */
+@font-face {
+  font-family: Pretendard;
+  font-weight: 400;
+  src: url(https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff)
+    format("woff");
+}
+
+@font-face {
+  font-family: Pretendard;
+  font-weight: 500;
+  src: url(https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff)
+    format("woff");
+}
+
+@font-face {
+  font-family: Pretendard;
+  font-weight: 600;
+  src: url(https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff)
+    format("woff");
+}
+
+@font-face {
+  font-family: Pretendard;
+  font-weight: 700;
+  src: url(https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff)
+    format("woff");
+}
+
+@font-face {
+  font-family: Pretendard;
+  font-weight: 800;
+  src: url(https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff)
+    format("woff");
+}
+
+@font-face {
+  font-family: Pretendard;
+  font-weight: 900;
+  src: url(https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Black.woff)
+    format("woff");
+}
 
 * {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-/* 스크롤바 스타일 */
+/* Scrollbar styling */
 html::-webkit-scrollbar {
   width: 5px;
 }
@@ -86,12 +128,41 @@ html::-webkit-scrollbar-thumb:hover {
   background: #7e94b4;
 }
 
-/* wrap 클래스 */
+/* Common wrap class */
 .wrap {
   background-color: #eff2f7;
   margin: 0 auto;
   min-height: 100vh;
   width: 400px;
+}
+
+/* Top Section */
+.wrap .top {
+  align-items: center;
+  background-color: #fff;
+  border-bottom: 1px solid var(--gray20);
+  display: flex;
+  font-size: 18px;
+  font-weight: 700;
+  height: 56px;
+}
+
+.wrap .top img {
+  height: 24px;
+  margin: 0 8px 0 16px;
+}
+
+.wrap .tab {
+  align-items: center;
+  background-color: #fff;
+  border-bottom: 1px solid var(--gray30);
+  color: var(--gray70);
+  display: flex;
+  height: 50px;
+  padding: 0 0 0 8px;
+  position: sticky;
+  top: 0;
+  z-index: 500;
 }
 
 @media (max-width: 600px) {

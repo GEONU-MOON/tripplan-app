@@ -1,19 +1,27 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "../../styles/common.css";
 import "./LoginPage.css";
 
-const LoginPage = () => {
+const LoginPage = ({ onLogin }) => {
+  const navigate = useNavigate();
+
+  const handleLogin = () => {
+    onLogin();
+    navigate("/"); // 로그인 후 HomePage로 이동
+  };
+
   return (
     <div className="wrap">
       <div className="login-container">
         <img src="/img/logo.svg" alt="dctrend" className="logo" />
         <div className="login-title">Trip Plan</div>
         <div className="login-buttons">
-          <button className="kakao-btn">
+          <button className="kakao-btn" onClick={handleLogin}>
             <img src="/img/kakao.svg" alt="Kakao" />
             카카오로 로그인하기
           </button>
-          <button className="naver-btn">
+          <button className="naver-btn" onClick={handleLogin}>
             <img src="/img/naver.svg" alt="Naver" />
             네이버로 로그인하기
           </button>
