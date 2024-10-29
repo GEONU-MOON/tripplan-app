@@ -1,0 +1,404 @@
+/* Miscellaneous */
+img {
+  -webkit-user-drag: none;
+  border: 0;
+  -webkit-user-select: none;
+  user-select: none;
+  vertical-align: top;
+}
+
+.fend {
+  clear: both;
+}
+
+/* Tab Section */
+.wrap .tab {
+  align-items: center;
+  background-color: #fff;
+  border-bottom: 1px solid var(--gray30);
+  color: var(--gray70);
+  display: flex;
+  height: 50px;
+  padding: 0 0 0 8px;
+  position: sticky;
+  top: 0;
+  z-index: 500;
+}
+
+.wrap .tab ul {
+  cursor: pointer;
+  line-height: 50px;
+  margin-right: 8px;
+  padding: 0 8px;
+  position: relative;
+}
+
+.wrap .tab ul.on {
+  color: var(--blue100);
+  font-weight: 700;
+}
+
+.wrap .tab ul.on:before {
+  background-color: var(--blue100);
+  bottom: -1px;
+  content: "";
+  height: 3px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+/* List Section */
+.wrap .list {
+  padding: 8px 0 0;
+}
+
+.wrap .list ul {
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px -2px #1018280a;
+  margin: 0 8px 8px;
+  min-height: 80px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Default List */
+.wrap .list .default {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.wrap .list .default .info {
+  padding: 0 0 0 16px;
+  width: calc(100% - 96px);
+}
+
+.wrap .list .default .info .date {
+  color: var(--gray50);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 0 0;
+}
+
+.wrap .list .default .info .title {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  padding: 0 0 4px;
+}
+
+.wrap .list .default .info .txt {
+  color: var(--gray60);
+  font-size: 13px;
+  line-height: 16px;
+  padding: 0 0 10px;
+}
+
+.wrap .list .default .thumb {
+  position: relative;
+  width: 80px;
+}
+
+.wrap .list .default .thumb .qty {
+  background-color: var(--blue100);
+  border-radius: 18px;
+  color: #fff;
+  font-size: 11px;
+  height: 18px;
+  line-height: 18px;
+  position: absolute;
+  right: 8px;
+  text-align: center;
+  top: 8px;
+  width: 18px;
+  z-index: 50;
+}
+
+.wrap .list .default .thumb .box {
+  border-radius: 8px;
+  cursor: pointer;
+  height: 50px;
+  overflow: hidden;
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  width: 50px;
+}
+
+.wrap .list .default .thumb .box img {
+  height: 100%;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.wrap .list .default .thumb .box img:first-child {
+  z-index: 30;
+}
+
+.wrap .list .default .link {
+  -webkit-overflow-scrolling: touch;
+  background-color: var(--gray10);
+  display: flex;
+  height: 36px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.wrap .list .default .link::-webkit-scrollbar {
+  display: none;
+}
+
+.wrap .list .default .link li {
+  background-color: #fff;
+  border: 1px solid var(--gray30);
+  border-radius: 100px;
+  color: var(--gray50);
+  cursor: pointer;
+  font-size: 12px;
+  height: 20px;
+  line-height: 20px;
+  margin: 8px 8px 0 0;
+  padding: 0 8px;
+}
+
+.wrap .list .default .link li:first-child {
+  margin: 8px 8px 0;
+}
+
+/* Move List */
+.wrap .list .move .ico {
+  height: 16px;
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  width: 16px;
+}
+
+.wrap .list .move .ico.planeStart {
+  background: url("../../../public/img/plane_start.svg") no-repeat 50%;
+  background-size: contain;
+}
+
+.wrap .list .move .price {
+  bottom: 8px;
+  color: var(--gray50);
+  font-size: 12px;
+  position: absolute;
+  right: 16px;
+}
+
+.wrap .list .move .info {
+  padding: 0 0 0 16px;
+  width: calc(100% - 96px);
+}
+
+.wrap .list .move .info .date {
+  color: var(--gray50);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 0 0;
+}
+
+.wrap .list .move .info .title {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  padding: 0 0 4px;
+}
+
+.wrap .list .move .info .txt {
+  align-items: center;
+  color: var(--gray60);
+  display: flex;
+  font-size: 13px;
+  line-height: 16px;
+  padding: 0 0 10px;
+}
+
+.wrap .list .move .info .txt .arw {
+  margin: 0 4px;
+}
+
+.wrap .list .move .info .txt .arw:before {
+  content: "\21E2";
+}
+
+/* 태그 스타일 */
+.link .tag {
+  background-color: #f0f4f8;
+  color: #007bff;
+  border-radius: 12px;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: 500;
+  display: inline-block;
+  margin: 4px 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* 팝업 오버레이 */
+.popup-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.popup-content h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* 드롭다운 스타일 */
+#item-type,
+#transport-type {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f3f4f6;
+}
+
+/* 폼 요소 스타일 */
+.item-form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 5px;
+  text-align: left;
+  color: #555;
+}
+
+.item-form input {
+  width: calc(100% - 22px);
+  padding: 8px 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.item-form button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.item-form button:hover {
+  background-color: #0056b3;
+}
+
+/* 닫기 버튼 스타일 */
+.popup-content > button {
+  background-color: #ccc;
+  color: #333;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.popup-content > button:hover {
+  background-color: #999;
+}
+
+/* .wrap 내부 고정 버튼 스타일 */
+.wrap {
+  position: relative;
+}
+
+.floating-btn {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  background-color: #007bff;
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+}
+
+.floating-btn:hover {
+  background-color: #0056b3;
+}
+
+/* 안내 메시지 스타일 */
+.no-items-message {
+  text-align: center;
+  color: var(--gray50);
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 20px;
+  display: block; /* 초기 상태는 보이게 설정 */
+}
+
+/* Action Buttons */
+.action-buttons {
+  position: absolute;
+  top: 15px;
+  right: 80px;
+  display: flex;
+  gap: 8px;
+}
+
+.edit-btn,
+.delete-btn {
+  background-color: #f3f4f6;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.edit-btn:hover {
+  background-color: var(--blue100);
+}
+
+.delete-btn:hover {
+  background-color: red;
+}
+
+.edit-btn i,
+.delete-btn i {
+  font-size: 14px;
+  color: #333;
+}

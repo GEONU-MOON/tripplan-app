@@ -1,0 +1,98 @@
+.login-container {
+  text-align: center;
+  padding: 40px 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 380px;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.login-container .logo {
+  margin-bottom: 24px;
+  width: 100px;
+}
+
+.login-title {
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1.5;
+  color: var(--gray110);
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.login-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.kakao-btn,
+.naver-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 14px 0;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+}
+
+.kakao-btn {
+  background-color: #fee500;
+  color: #3c1e1e;
+}
+
+.kakao-btn img {
+  margin-right: 8px;
+}
+
+.naver-btn {
+  background-color: #03c75a;
+  color: white;
+}
+
+.naver-btn img {
+  margin-right: 8px;
+}
+
+.kakao-btn img,
+.naver-btn img {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+.login-info {
+  font-size: 13px;
+  color: var(--gray90);
+  display: flex;
+  align-items: flex-start;
+}
+
+.login-info .info-icon {
+  margin-right: 4px;
+  line-height: 1.5;
+  margin-top: 4px;
+}
+
+.login-info .info-text {
+  margin: 0;
+  text-align: start;
+  line-height: 1.5;
+  display: inline-block;
+}
+
+.login-info a {
+  color: var(--blue100);
+  text-decoration: underline;
+}
